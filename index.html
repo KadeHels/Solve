@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Solver Test</title>
+        <link rel="icon" type="image/png" href="images/puzzle.png">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="js/farmer/FarmerState.js"></script>
+        <script type="text/javascript" src="js/farmer/FarmerMove.js"></script>
+        <script type="text/javascript" src="js/farmer/FarmerProblem.js"></script>
+        <script type="text/javascript" src="js/waterjug/WaterJugState.js"></script>
+        <script type="text/javascript" src="js/waterjug/WaterJugMove.js"></script>
+        <script type="text/javascript" src="js/waterjug/WaterJugProblem.js"></script>
+        <script type="text/javascript" src="js/Bridge/BridgeState.js"></script>
+        <script type="text/javascript" src="js//Bridge/BridgeMove.js"></script>
+        <script type="text/javascript" src="js//Bridge/BridgeProblem.js"></script>
+        <script type="text/javascript" src="js/solve.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                init();
+            };
+        </script>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+    </head>
+    <body>
+        <div id="content">
+        <table id="problemTable" style="margin:2em">
+	  <tr>
+              <th colspan="2" class="header" id="top">Welcome to the <br><span id="probName"></span><br> Problem</th>
+	  </tr>
+	  <tr>
+              <td colspan="2" id="intro" ></td>
+	  </tr>
+	  <tr>
+              <th class="title">Current State</th>
+	    <th class="title">Possible Moves</th>
+	  </tr>
+	  <tr>
+              <td id="statePanel">
+                <textarea id="state" readonly></textarea>
+	    </td>
+	    <td id="moveList">
+                <table id="moveTable"></table>
+	    </td>
+	  </tr>
+	  <tr>
+              <th colspan="2" id="message" ></th>
+	  </tr>
+	  <tr>
+	    <td colspan="2">
+	      <input type="button" value="RESET" onclick="reset();"/>
+	    </td>
+	  </tr>
+	  <tr id="bottom" >
+	    <td id="bottomLeft" style="text-align: right">Select Problem:</td>
+            <td id="bottomRight"><select id="selector" onchange="displayProblem();"></select></td>
+	  </tr>
+	</table>
+            
+            <div><button id="sizeControl" onclick=" if(document.getElementById('sizeControl').innerHTML === 'Minimum'){document.getElementById('sizeControl').innerHTML='Full Screen'; document.getElementById('content').style.width = '500px';} else if(document.getElementById('sizeControl').innerHTML === 'Full Screen'){document.getElementById('sizeControl').innerHTML='Minimum'; document.getElementById('content').style.width = '100%';}">Full Screen</button></div>
+        </div>
+        
+    </body>
+</html>
